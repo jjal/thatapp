@@ -2,7 +2,7 @@ Thatapp::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  match '.*', to: 'static_pages#home'
+  match '/', to: 'static_pages#home'
   root to: 'static_pages#home'
   
   # Sample of regular route:
