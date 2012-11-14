@@ -2,8 +2,11 @@ Thatapp::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  match '/', to: 'static_pages#home'
-  root to: 'static_pages#home'
+  resources :subscribers,   only: [:new, :create]
+
+  root to: 'subscribers#new'
+	
+	match '/', to: 'subscribers#new'
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
