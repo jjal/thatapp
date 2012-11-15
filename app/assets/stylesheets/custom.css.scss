@@ -3,6 +3,8 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$purpleOrange: #C61C3B;
+$lightYellow: #FFFDCE;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -11,8 +13,10 @@ $grayMediumLight: #eaeaea;
 }
 
 /* universal */
-
-html {
+html, body { 
+  background: $purpleOrange; 
+  color: $lightYellow;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
   overflow-y: scroll;
 }
 
@@ -214,27 +218,6 @@ input, textarea, select, .uneditable-input {
   }
 }
 
-/* microposts */
-
-.microposts {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-}
-.content {
-  display: block;
-}
-.timestamp {
-  color: $grayLight;
-}
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
 aside {
   textarea {
     height: 100px;
@@ -242,28 +225,15 @@ aside {
   }
 }
 
-/* users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
-    }
-  }
-}
+/** buttons **/
 
 .btn-danger {
-  background: rgb(198,28,59); 
-color: rgb(255,253,206);
+  background: $purpleOrange; 
+  color: $lightYellow;
 }
 .btn-danger:hover {
-  background: rgb(178,08,39); 
-  color: rgb(255,253,206);
+  background: darken($purpleOrange,10%); 
+  color: $lightYellow;
 }
 .alert-info {
   background-color: rgb(24,135,245); 
@@ -271,8 +241,31 @@ color: rgb(255,253,206);
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
-html, body { 
-background: rgb(198,28,59); 
-color: rgb(255,253,206);
-font-family: Nunito, Arial, Helvetica, sans-serif;
+/** splash page **/
+#splash_content {
+ margin:0px auto;
+ width:600px;
+ text-align:center;
 }
+#splash_content div {
+  margin:0px auto;
+}
+#splash_form {
+  margin-top: 100px !important;
+}
+#splash_logo {
+  background: url('/assets/logo.png') no-repeat;
+  width:577px;
+  height:240px;
+}
+#splash_faces {
+  background: url('/assets/faces.png') no-repeat;
+  width:559px;
+  height:129px;
+}
+#splash_tagline {
+  background: url('/assets/tagline.png') no-repeat;
+  width:594px;
+  height:52px;
+}
+
