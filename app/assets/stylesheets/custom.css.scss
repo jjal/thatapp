@@ -17,7 +17,6 @@ html, body {
   background: $purpleOrange; 
   color: $lightYellow;
   font-family: Nunito, Arial, Helvetica, sans-serif;
-  overflow-y: scroll;
 }
 
 body {
@@ -226,7 +225,6 @@ aside {
 }
 
 /** buttons **/
-
 .btn-danger {
   background: $purpleOrange; 
   color: $lightYellow;
