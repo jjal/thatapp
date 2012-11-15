@@ -15,7 +15,7 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(params[:subscriber])
     if @subscriber.save
-      flash[:success] = "Thanks for your interest! We'll keep you updated on developments with That App as they happen!"
+      flash[:info] = "Thanks for your interest! We'll keep you updated on developments with that app as they happen!"
       redirect_to root_url
     else
       @feed_items = []
