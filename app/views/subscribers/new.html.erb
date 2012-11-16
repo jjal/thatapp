@@ -5,7 +5,7 @@
     <div id="splash_tagline" ></div>
     <div id="splash_form">
     <%= form_for(@subscriber) do |f| %>
-      <%= f.label :email, "Register now to stay in the loop (we promise, absolutely no spam)" %>
+      <%= f.label :email, "Register now to for updates and early access (we promise, absolutely no spam)" %>
       <div class="input-append">
       <%= f.email_field :email, placeholder: "your@email.com", class: "input-large" %> 
       <%= f.submit "Keep me updated!", class: "btn btn-large btn-danger", style:"margin-right:10px !important;margin-top:-4px" %>

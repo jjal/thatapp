@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import 'font-awesome';
 
 /* mixins, variables, etc. */
 
@@ -265,5 +266,9 @@ aside {
   background: url('/assets/tagline.png') no-repeat;
   width:594px;
   height:52px;
+}
+#social_media {
+  margin: 40px;
+  margin-top: 60px;
 }
 
