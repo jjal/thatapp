@@ -2,7 +2,6 @@ Thatapp::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-<<<<<<< HEAD
   resources :users
   resources :sessions,   only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
@@ -10,16 +9,10 @@ Thatapp::Application.routes.draw do
   resources :questions do
     resources :answers
   end
-  
-  match '/', to: 'static_pages#home'
-  root to: 'static_pages#home'
-=======
   resources :subscribers,   only: [:new, :create]
-
+  
   root to: 'subscribers#new'
-	
 	match '/', to: 'subscribers#new'
->>>>>>> 0efe00dbc2a55d83f1428a68314975b98f208d2b
   
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
