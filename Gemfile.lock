@@ -32,11 +32,15 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+<<<<<<< HEAD
     bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-sass (2.2.1.1)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.6)
       will_paginate
+=======
+    bootstrap-sass (2.1.1.0)
+>>>>>>> 0efe00dbc2a55d83f1428a68314975b98f208d2b
     builder (3.0.4)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -135,10 +139,14 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
+<<<<<<< HEAD
     rake (10.0.3)
     rb-fchange (0.0.5)
       ffi
     rb-notifu (0.0.4)
+=======
+    rake (10.0.0)
+>>>>>>> 0efe00dbc2a55d83f1428a68314975b98f208d2b
     rdoc (3.12)
       json (~> 1.4)
     rspec (2.10.0)
@@ -194,6 +202,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+<<<<<<< HEAD
   annotate (= 2.5.0)
   bcrypt-ruby (= 3.0.1)
   bootstrap-sass
@@ -205,6 +214,10 @@ DEPENDENCIES
   factory_girl_rails (= 1.4.0)
   faker (= 1.0.1)
   guard-rspec (= 0.5.5)
+=======
+  bootstrap-sass
+  coffee-rails (~> 3.2.1)
+>>>>>>> 0efe00dbc2a55d83f1428a68314975b98f208d2b
   jquery-rails
   pg (= 0.12.2)
   rails (= 3.2.8)

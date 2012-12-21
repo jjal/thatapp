@@ -2,10 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass'
+<<<<<<< HEAD
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+=======
+>>>>>>> 0efe00dbc2a55d83f1428a68314975b98f208d2b
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -39,9 +42,20 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+<<<<<<< HEAD
   gem 'sass-rails',   '3.2.4'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
+=======
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platforms => :ruby
+
+  gem 'uglifier', '>= 1.0.3'
+  
+>>>>>>> 0efe00dbc2a55d83f1428a68314975b98f208d2b
 end
 
 gem 'jquery-rails'
