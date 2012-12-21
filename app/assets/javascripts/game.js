@@ -28,7 +28,7 @@ function Game(gameId, userId) {
       break;
       case 1:
         // i'm the questionner and it's closed so show the wait for answer message
-        if(gameData.current_user_id == getCurrentUserId())
+        if(gameData.current_user_id == this.getCurrentUserId())
         {
           this.showWaitForAnswerMessage();
         } else {
