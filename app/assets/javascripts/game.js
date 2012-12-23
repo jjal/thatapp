@@ -121,11 +121,13 @@ function Game(gameId, userId) {
 
   this.showSuccess = function()
   {
+    this.currentWindow = "Success";
     $("#status_space").html("<div class='alert alert-success'>WINNER</div>");
     $("#action_space").html("");
   }
   this.showFail = function(id)
   {
+    this.currentWindow = "Fail";
     $("#status_space").html("<div class='alert alert-error'>FAIL</div>");
     //$.get("/questions/"+currentQuestionId+"/answers/"+id+"?game_id="+getGameId(), function(html)
     //{  

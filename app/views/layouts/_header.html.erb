@@ -1,24 +1,15 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "that app", root_path, id: "logo" %>
+      <%= link_to root_path do %>
+        <%= image_tag "/assets/thatapp_logo.png", width: 50, id: "logo" %>
+      <% end %>
       <nav>
         <ul class="nav pull-right">
-          
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <% if signed_in? %>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Games <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <% (current_user.games_created + current_user.games_joined).each do |game| %>
-                <li><%= link_to "#{game.user_a.name}, #{game.user_b.name}", game %></li>
-                <% end %>
-              </ul>
-            </li>
-            <li><%= link_to "Users", users_path %></li>
+            <li class="<%= games_link_class current_user%>"><%= link_to "Games", games_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <%=current_user.name%> <b class="caret"></b>

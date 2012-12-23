@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-
+  include UsersHelper
 	before_filter :signed_in_user, only: [:create, :destroy, :show]
   before_filter :correct_user,   only: [:destroy, :show]
 	
@@ -12,7 +12,7 @@ class GamesController < ApplicationController
   # GET /Games
   # GET /Games.json
   def index
-    @games = Game.all
+    @games = Game.find(:all, conditions: ["user_a_id = ? OR user_b_id = ?", current_user.id, current_user.id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -72,11 +72,22 @@ class GamesController < ApplicationController
     if(game_state == 2)
       answer = Answer.find(params[:answer_id])
       q_id = answer.question_id
+      #if the answer is wrong, game state 4 - otherwise 3
       game_state = answer.score == 0 ? 4 : 3
-      @game.current_user_id = @game.current_user_id == @game.user_a_id ? @game.user_b_id : @game.user_a_id
+      #if game state 2 and correct answer, switch the current user
+      #debugger
+      if(answer.score != 0)
+        @game.current_user_id = (@game.current_user_id == @game.user_a_id) ? @game.user_b_id : @game.user_a_id
+      end
     end
+    
     respond_to do |format|
-      if @game.update_attributes(current_question_id: q_id, state: game_state, answer_id: params[:answer_id])
+      if @game.update_attributes(
+          current_question_id: q_id, 
+          state: game_state, 
+          answer_id: params[:answer_id]
+        )
+        #debugger
         format.html { render text: "ok" }
         format.json { head :no_content }
       else

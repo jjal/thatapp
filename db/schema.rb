@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121114164423) do
+ActiveRecord::Schema.define(:version => 20121223075221) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -25,13 +25,13 @@ ActiveRecord::Schema.define(:version => 20121114164423) do
   create_table "games", :force => true do |t|
     t.integer  "user_a_id"
     t.integer  "user_b_id"
-    t.string   "current_user_id"
+    t.integer  "current_user_id",     :limit => 255
     t.string   "int"
     t.integer  "game_template_id"
     t.integer  "current_question_id"
     t.integer  "state"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "answer_id"
   end
 
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20121114164423) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
