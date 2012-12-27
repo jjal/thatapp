@@ -1,11 +1,17 @@
 <ul class="thumbnails">
-  <li class="span4"><div class="<%=class_for(game, game.user_a_id)%>">
-    <%= avatar_for(game.user_a) %>
-    <p><%= game.user_a.name %></p>
-    </div></li>
-  <li class="span4"><%= image_tag "/assets/vs_.png" %></li>
-  <li class="span4"><div class="<%=class_for(game, game.user_b_id)%>">
-    <%= avatar_for(game.user_b) %>
-    <p><%= game.user_a.name %></p>
-  </div></li>
+  <li class="span3">
+    <div class="<%=class_for(game, game.user_a_id)%>">
+      <%= avatar_for(game.user_a) %>
+      <p><%= game.user_a.name %></p>
+    </div>
+  </li>
+  <li class="gameVs">
+    <div class=""><%= image_tag "/assets/vs_.png" %></div>
+  </li>
+  <li class="span3">
+    <div class="<%=class_for(game, game.user_b_id)%>">
+      <%= avatar_for(game.user_b) %>
+      <p><%= game.user_b.name %></p>
+    </div>
+  </li>
 </ul>

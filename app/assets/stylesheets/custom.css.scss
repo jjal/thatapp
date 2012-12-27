@@ -313,7 +313,20 @@ img.avatar {
   margin:16px;
 }
 
-
 div.avatar_active {
   background: url(/assets/starburst.png) no-repeat center center;
+}
+
+.gameVs > div {
+  height:170px;
+  position:relative;
+  padding-top: 50px;
+  text-align: center;
+}
+
+li.gameVs {
+  margin-left: 0px !important;
+}
+
+.gameVs > img {
 }

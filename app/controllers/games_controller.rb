@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   include UsersHelper
-	before_filter :signed_in_user, only: [:create, :destroy, :show]
+	before_filter :signed_in_user, only: [:create, :destroy, :show, :index]
   before_filter :correct_user,   only: [:destroy, :show]
 	
   #0 = open
@@ -51,7 +51,7 @@ class GamesController < ApplicationController
   # POST /Games.json
   def create
     @game = current_user.games_created.build()
-    @game.user_b_id = params[:user_b_id]
+    @game.user_b_id = params[:user_b_id].nil? ? current_user.random_other_user.id : params[:user_b_id]
     @game.state = 0
     @game.current_user_id = current_user.id
     if @game.save!
@@ -107,7 +107,6 @@ class GamesController < ApplicationController
 	private
 
     def correct_user
-      #@game = current_user.Games_started.find_by_id(params[:id])
-      #redirect_to root_url if @game.nil?
+      redirect_to root_url if current_user.nil?
     end
 end

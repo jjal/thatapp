@@ -31,6 +31,15 @@ class User < ActiveRecord::Base
     # This is preliminary. See "Following users" for the full implementation.
     Micropost.where("user_id = ?", id)
   end
+  
+  def random_other_user
+    rand_user = nil
+    while(rand_user.nil? or rand_user == self) do    
+      offset = rand(User.count)
+      rand_user = User.first(:offset => offset)
+    end
+    return rand_user
+  end
 	
 	private
 
