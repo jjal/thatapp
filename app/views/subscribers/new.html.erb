@@ -1,9 +1,11 @@
 <div id="page" style="width:100%">
-  <div id="content" style="margin:0px auto;width:720px;text-align:center">
-    <img src="/thatapp.png" alt="that app" />
-    <div style="margin:0px auto">Coming soon!</div>
+  <div id="splash_content">
+    <div id="splash_logo" ></div>
+    <div id="splash_faces" ></div>
+    <div id="splash_tagline" ></div>
+    <div id="splash_form">
     <%= form_for(@subscriber) do |f| %>
-      <%= f.label :email, "Register now to stay in the loop (we promise, absolutely no spam)" %>
+      <%= f.label :email, "Register now to for updates and early access (we promise, absolutely no spam)" %>
       <div class="input-append">
       <%= f.email_field :email, placeholder: "your@email.com", class: "input-large" %> 
       <% flash.each do |key, value| %>
@@ -14,7 +16,11 @@
       <%= f.hidden_field :os %>
       <%= f.hidden_field :browser %>    
     <% end %>
-    
+
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    </div>
   </div>
 </div>
 <script>$(document).ready(function() {

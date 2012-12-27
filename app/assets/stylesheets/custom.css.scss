@@ -1,12 +1,14 @@
 @import "bootstrap";
+@import 'font-awesome';
 
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$purpleOrange: #C61C3B;
+$lightYellow: #FFFDCE;
 $almostBlack: #202020;
 $grayDarkLight: #404040;
 $purplyRed: rgb(198,28,59);
-$lightYellow: rgb(255,253,206);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -15,9 +17,10 @@ $lightYellow: rgb(255,253,206);
 }
 
 /* universal */
-
-html {
-  overflow-y: scroll;
+html, body { 
+  background: $purpleOrange; 
+  color: $lightYellow;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -259,32 +262,59 @@ input, textarea, select, .uneditable-input {
   }
 }
 
-/* microposts */
-
-.microposts {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-}
-.content {
-  display: block;
-}
-.timestamp {
-  color: $grayLight;
-}
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
 aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+
+/** buttons **/
+.btn-danger {
+  background: $purpleOrange; 
+  color: $lightYellow;
+}
+.btn-danger:hover {
+  background: darken($purpleOrange,10%); 
+  color: $lightYellow;
+}
+.alert-info {
+  background-color: rgb(24,135,245); 
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/** splash page **/
+#splash_content {
+ margin:0px auto;
+ width:600px;
+ text-align:center;
+}
+#splash_content div {
+  margin:0px auto;
+}
+#splash_form {
+  margin-top: 100px !important;
+}
+#splash_logo {
+  background: url('/assets/logo.png') no-repeat;
+  width:577px;
+  height:240px;
+}
+#splash_faces {
+  background: url('/assets/faces.png') no-repeat;
+  width:559px;
+  height:129px;
+}
+#splash_tagline {
+  background: url('/assets/tagline.png') no-repeat;
+  width:594px;
+  height:52px;
+}
+#social_media {
+  margin: 40px;
+  margin-top: 60px;
 }
 
 /* users index */
