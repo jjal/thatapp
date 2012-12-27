@@ -6,6 +6,9 @@
 $grayMediumLight: #eaeaea;
 $purpleOrange: #C61C3B;
 $lightYellow: #FFFDCE;
+$almostBlack: #202020;
+$grayDarkLight: #404040;
+$purplyRed: rgb(198,28,59);
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -83,6 +86,47 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+/* bootstrap overrides */
+.btn-danger {
+  background: rgb(198,28,59); 
+color: rgb(255,253,206);
+}
+
+.btn-danger:hover {
+  background: rgb(178,08,39); 
+  color: rgb(255,253,206);
+}
+
+.navbar-inner {
+  background-color: $almostBlack; /* fallback color, place your own */
+
+  /* Gradients for modern browsers, replace as you see fit */
+  background-image: -moz-linear-gradient(top, $grayDarkLight, $almostBlack);
+  background-image: -ms-linear-gradient(top, $grayDarkLight, $almostBlack);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($grayDarkLight), to($almostBlack));
+  background-image: -webkit-linear-gradient(top, $grayDarkLight, $almostBlack);
+  background-image: -o-linear-gradient(top, $grayDarkLight, $almostBlack);
+  background-image: linear-gradient(top, $grayDarkLight, $almostBlack);
+  background-repeat: repeat-x;
+
+  /* IE8-9 gradient filter */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$grayDarkLight', endColorstr='$almostBlack', GradientType=0);
+}
+
+.dropdown-menu {
+  background-color: lighten($almostBlack, 20);
+}
+
+.navbar .nav > li > a {
+  color: $grayMediumLight !important;
+  text-shadow: 0 1px 0 lighten($almostBlack, 20);
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: lighten($almostBlack, 20);
+  color: #555;
 }
 
 /* footer */
@@ -225,6 +269,7 @@ aside {
   }
 }
 
+
 /** buttons **/
 .btn-danger {
   background: $purpleOrange; 
@@ -272,3 +317,32 @@ aside {
   margin-top: 60px;
 }
 
+/* users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+div.avatar {
+  text-align:center;
+  width:167px;
+  height:170px;
+  padding: auto;
+}
+
+img.avatar {
+  margin:16px;
+}
+
+div.avatar_active {
+  background: url(/assets/starburst.png) no-repeat center center;
+}

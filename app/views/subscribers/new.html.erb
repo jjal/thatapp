@@ -8,12 +8,15 @@
       <%= f.label :email, "Register now to for updates and early access (we promise, absolutely no spam)" %>
       <div class="input-append">
       <%= f.email_field :email, placeholder: "your@email.com", class: "input-large" %> 
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
       <%= f.submit "Keep me updated!", class: "btn btn-large btn-danger", style:"margin-right:10px !important;margin-top:-4px" %>
       </div>
       <%= f.hidden_field :os %>
       <%= f.hidden_field :browser %>    
     <% end %>
-    
+
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>

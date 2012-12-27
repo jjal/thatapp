@@ -32,7 +32,10 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+    bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-sass (2.1.1.0)
+    bootstrap-will_paginate (0.0.6)
+      will_paginate
     builder (3.0.4)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -51,6 +54,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+<<<<<<< HEAD
+=======
+    columnize (0.3.6)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
     cucumber (1.2.1)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
@@ -61,6 +68,16 @@ GEM
       cucumber (>= 1.1.3)
       nokogiri (>= 1.5.0)
     database_cleaner (0.7.0)
+<<<<<<< HEAD
+=======
+    debugger (1.2.2)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.5)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.5)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -70,6 +87,7 @@ GEM
     factory_girl_rails (1.4.0)
       factory_girl (~> 2.3.0)
       railties (>= 3.0.0)
+<<<<<<< HEAD
     ffi (1.1.5)
     ffi (1.1.5-x86-mingw32)
     font-awesome-sass-rails (2.0.0.0)
@@ -80,6 +98,14 @@ GEM
     gherkin (2.11.5-x86-mingw32)
       json (>= 1.4.6)
     guard (1.5.2)
+=======
+    faker (1.0.1)
+      i18n (~> 0.4)
+    ffi (1.2.0-x86-mingw32)
+    gherkin (2.11.5-x86-mingw32)
+      json (>= 1.4.6)
+    guard (1.5.4)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
       listen (>= 0.4.2)
       lumberjack (>= 1.0.2)
       pry (>= 0.9.10)
@@ -89,13 +115,20 @@ GEM
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
-    jquery-rails (2.1.3)
-      railties (>= 3.1.0, < 5.0)
-      thor (~> 0.14)
+    jquery-rails (2.1.4)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
     json (1.7.5)
+<<<<<<< HEAD
     libwebsocket (0.1.5)
       addressable
     listen (0.5.3)
+=======
+    libwebsocket (0.1.7.1)
+      addressable
+      websocket
+    listen (0.6.0)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
     lumberjack (1.0.2)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -103,6 +136,7 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.19)
+<<<<<<< HEAD
     multi_json (1.3.7)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
@@ -113,6 +147,12 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
+=======
+    multi_json (1.5.0)
+    nokogiri (1.5.6-x86-mingw32)
+    pg (0.12.2-x86-mingw32)
+    polyglot (0.3.3)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
     pry (0.9.10-x86-mingw32)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -161,24 +201,34 @@ GEM
       rspec (~> 2.10.0)
     rubyzip (0.9.9)
     sass (3.2.3)
-    sass-rails (3.2.5)
+    sass-rails (3.2.4)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+<<<<<<< HEAD
     selenium-webdriver (2.25.0)
+=======
+    selenium-webdriver (2.27.2)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
       childprocess (>= 0.2.5)
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
     slop (3.3.3)
+<<<<<<< HEAD
     spork (0.9.0)
+=======
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
     spork (0.9.0-x86-mingw32)
       win32-process
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+<<<<<<< HEAD
     sqlite3 (1.3.5)
+=======
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
     sqlite3 (1.3.5-x86-mingw32)
     thor (0.16.0)
     tilt (1.3.3)
@@ -186,12 +236,20 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.35)
-    uglifier (1.3.0)
+    uglifier (1.2.3)
       execjs (>= 0.3.0)
+<<<<<<< HEAD
       multi_json (~> 1.0, >= 1.0.2)
     win32-process (0.7.0)
       ffi (>= 1.0.0)
     win32console (1.3.2)
+=======
+      multi_json (>= 1.0.2)
+    websocket (1.0.5)
+    will_paginate (3.0.3)
+    win32-process (0.7.0)
+      ffi (>= 1.0.0)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
     win32console (1.3.2-x86-mingw32)
     xpath (0.1.4)
       nokogiri (~> 1.3)
@@ -201,6 +259,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (= 2.5.0)
+<<<<<<< HEAD
   bootstrap-sass
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)
@@ -208,6 +267,18 @@ DEPENDENCIES
   database_cleaner (= 0.7.0)
   factory_girl_rails (= 1.4.0)
   font-awesome-sass-rails
+=======
+  bcrypt-ruby (= 3.0.1)
+  bootstrap-sass
+  bootstrap-will_paginate (= 0.0.6)
+  capybara (= 1.1.2)
+  coffee-rails (= 3.2.2)
+  cucumber-rails (= 1.2.1)
+  database_cleaner (= 0.7.0)
+  debugger
+  factory_girl_rails (= 1.4.0)
+  faker (= 1.0.1)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
   guard-rspec (= 0.5.5)
   jquery-rails
   pg (= 0.12.2)
@@ -215,8 +286,16 @@ DEPENDENCIES
   rb-fchange (= 0.0.5)
   rb-notifu (= 0.0.4)
   rspec-rails (= 2.10.0)
+<<<<<<< HEAD
   sass-rails (~> 3.2.3)
   spork (= 0.9.0)
   sqlite3 (= 1.3.5)
   uglifier (>= 1.0.3)
+=======
+  sass-rails (= 3.2.4)
+  spork (= 0.9.0)
+  sqlite3 (= 1.3.5)
+  uglifier (= 1.2.3)
+  will_paginate (= 3.0.3)
+>>>>>>> f31a06412a1b3000d1d07b41ae5bedd596e62e98
   win32console

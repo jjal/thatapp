@@ -1,0 +1,19 @@
+<div class="clearfix" id="heads_space" style="width:100%"><%= render @game %></div>
+
+<div id="status_space" class="container"></div>
+<div id="question_space" class="container"></div>
+<div id="action_space" class="container"></div>
+<div id="next_question"><%= link_to "Next Question", game_path( {id: @game.id, state: 0, current_question_id: nil, current_answer_id: nil}), method: :put, remote: true %></div>
+<script>
+var game;
+$(document).ready(function() { 
+  $("#next_question").hide();
+  game = new Game(<%="#{@game.id}, #{current_user.id}"%>);
+  run();
+});
+var run = function()
+{
+  game.tick();
+  setTimeout(run, 2000);
+}
+</script>
