@@ -1,3 +1,6 @@
-<ul>
-<%= render @questions %>
-</ul>
+<%= render "find" %>
+<!-- common questions -->
+  <ul>
+    <%= render @questions %>
+  </ul> 
+  <%= will_paginate(@questions) %>
