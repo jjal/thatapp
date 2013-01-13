@@ -1,30 +1,30 @@
-class QuestionsController < ApplicationController
+class GameQuestionsController < ApplicationController
   
 	def index
-		@questions = Question.paginate(page: params[:page])
+		@questions = GameQuestion.paginate(page: params[:page])
     @game = Game.find(params[:game_id])
     render 'index', layout: false
 	end
 	
 	def show
-		@question = Question.find(params[:id])
+		@question = GameQuestion.find(params[:id])
     render 'show', layout: false
 	end
 	
 	def edit
 		#defined in correct_question
-    #@question = Question.find(params[:id])
+    #@question = GameQuestion.find(params[:id])
   end
 	
 	def new
-		@question = Question.new
+		@question = GameQuestion.new
   end
 	
 	def create
-    @question = Question.new(params[:question])
+    @question = GameQuestion.new(params[:question])
     if @question.save
 			sign_in @question
-      flash[:success] = "Question created"
+      flash[:success] = "GameQuestion created"
       redirect_to @question
     else
       render 'new'
@@ -33,9 +33,9 @@ class QuestionsController < ApplicationController
 	
 	def update
     #defined in correct question
-		#@question = Question.find(params[:id])
+		#@question = GameQuestion.find(params[:id])
     if @question.update_attributes(params[:question])
-			flash[:success] = "Question updated"
+			flash[:success] = "GameQuestion updated"
 			sign_in @question
       redirect_to @question
     else
@@ -44,8 +44,8 @@ class QuestionsController < ApplicationController
   end
 	 
 	def destroy
-    Question.find(params[:id]).destroy
-    flash[:success] = "Question destroyed."
+    GameQuestion.find(params[:id]).destroy
+    flash[:success] = "GameQuestion destroyed."
     redirect_to questions_url
   end
 	
