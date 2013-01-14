@@ -1,0 +1,21 @@
+
+<%= form_for @game do |f| %>
+<div class="offset3">
+<ul class="thumbnails span6">
+  <% for i in 1..4 do %>
+    <li class="thumbnail" style="border:none">
+    <%= button_tag "", class:"avatar avatar#{i}", onclick: "setFace(#{i})"%>
+    </li>
+  <% end %>
+  </ul>
+  <%= f.hidden_field :user_a_avatar %>
+<% end %>
+</div>
+<script>
+function setFace(i)
+{
+  $("#game_user_a_avatar").val(i);
+  alert($("#game_user_a_avatar").val());
+  $("#new_game").submit();  
+}
+</script>

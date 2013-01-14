@@ -1,3 +1,25 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  background: url('/assets/faces.png') no-repeat;
+  border: none;
+  padding:none;
+  margin:none;
+}
+
+.avatar1 {
+  background-position:0px 0px; 
+}
+.avatar2 {
+  background-position:-140px 0px;   
+}
+.avatar3 {
+  background-position:-280px 0px;   
+}
+.avatar4 {
+  background-position:-420px 0px;   
+}

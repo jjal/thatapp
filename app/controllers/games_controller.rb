@@ -50,7 +50,7 @@ class GamesController < ApplicationController
   # POST /Games
   # POST /Games.json
   def create
-    @game = current_user.games_created.build()
+    @game = current_user.games_created.build(params[:game])
     @game.user_b_id = params[:user_b_id].nil? ? current_user.random_other_user.id : params[:user_b_id]
     @game.state = 0
     @game.current_user_id = current_user.id
