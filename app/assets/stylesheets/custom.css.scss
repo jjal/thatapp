@@ -1,14 +1,8 @@
 @import "bootstrap";
-@import 'font-awesome';
+@import "font-awesome";
 
 /* mixins, variables, etc. */
-
-$grayMediumLight: #eaeaea;
-$purpleOrange: #C61C3B;
-$lightYellow: #FFFDCE;
-$almostBlack: #202020;
-$grayDarkLight: #404040;
-$purplyRed: rgb(198,28,59);
+@import "variables";
 
 @mixin box_sizing {
   -moz-box-sizing: border-box; 
@@ -282,7 +276,11 @@ aside {
   background: darken($purpleOrange,10%); 
   color: $lightYellow;
 }
-
+.alert-info {
+  background-color: rgb(24,135,245); 
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
 
 /** splash page **/
 #splash_content {

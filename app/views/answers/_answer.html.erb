@@ -1,1 +1,2 @@
-<li><%= link_to answer.content, game_path( {id: game.id, state: 2, answer_id: answer.id} ), method: :put, remote: true %></li>
+<div class="answer">A: <%= answer.content %></div>
+<%= render "users/expert", user: answer.expert %>

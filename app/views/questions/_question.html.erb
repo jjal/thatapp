@@ -1,1 +1,1 @@
-<li><%= question.content %></li>
+<%= link_to question_path(question), class: "question" do %><div class="question">Q: <%= question.content %></div><% end %>

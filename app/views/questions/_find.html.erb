@@ -1,1 +1,1 @@
-[Select question from the list of available questios]
+<%= collection_select "question", "id", Question.all, :id, :content, {}, class: "question" %>

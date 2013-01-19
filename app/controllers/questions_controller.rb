@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   
 	def index
 		@questions = Question.paginate(page: params[:page])
+    @most_popular = Question.most_popular
     render 'index'
 	end
 	

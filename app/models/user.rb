@@ -27,12 +27,7 @@ class User < ActiveRecord::Base
 	validates(:password, presence: true, length: { minimum: 6 })
 	validates(:password_confirmation, presence: true)
 	
-	def feed
-    # This is preliminary. See "Following users" for the full implementation.
-    Micropost.where("user_id = ?", id)
-  end
-  
-  def random_other_user
+	def random_other_user
     rand_user = nil
     while(rand_user.nil? or rand_user == self) do    
       offset = rand(User.count)

@@ -3,4 +3,5 @@ class ChangeIntForGamesCurrentUserId < ActiveRecord::Migration
     remove_column :games, :current_user_id
     add_column :games, :current_user_id, :integer
   end
+
 end

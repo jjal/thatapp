@@ -1,3 +1,5 @@
 <%= render "find" %>
 
-<%= @question.content %>
+<%= render "question", question: @question %>
+
+<%= render @question.expert_answers %>

@@ -71,7 +71,7 @@ namespace :db do
       ]
     }
     qa.each do |q,answers|
-      question = Question.create!(content: q)
+      question = GameQuestion.create!(content: q)
       first_q = true
       answers.each do |a|
         answer = question.answers.build(content: a[0], score: a[1])
