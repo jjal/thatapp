@@ -35,7 +35,12 @@ class GamesController < ApplicationController
   # GET /Games/new.json
   def new
     @game = Game.new
-
+    @faces = [
+      "hipster",
+      "emo girl",
+      "geek",
+      "player"
+    ]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @game }

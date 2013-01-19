@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(:version => 20130114070704) do
   end
 
   create_table "subscribers", :force => true do |t|
-    t.string   "email"
-    t.string   "browser"
-    t.string   "os"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "email"
+    t.string    "browser"
+    t.string    "os"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

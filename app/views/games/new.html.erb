@@ -1,13 +1,15 @@
 
 <%= form_for @game do |f| %>
 <div class="offset3">
+<h1>Select a character...</h1>
 <ul class="thumbnails span6">
-  <% for i in 1..4 do %>
-    <li class="thumbnail" style="border:none">
-    <%= button_tag "", class:"avatar avatar#{i}", onclick: "setFace(#{i})"%>
+  <% @faces.each_index do |i| %>
+    <li class="thumbnail span2" style="border:none">
+    <%= button_tag "", class:"avatar avatar#{(i+1).to_s}", onclick: "setFace(#{(i+1).to_s})"%>
+    <%=@faces[i]%>
     </li>
   <% end %>
-  </ul>
+</ul>
   <%= f.hidden_field :user_a_avatar %>
 <% end %>
 </div>
@@ -15,7 +17,6 @@
 function setFace(i)
 {
   $("#game_user_a_avatar").val(i);
-  alert($("#game_user_a_avatar").val());
   $("#new_game").submit();  
 }
 </script>
