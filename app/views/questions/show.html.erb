@@ -2,4 +2,8 @@
 
 <%= render "question", question: @question %>
 
-<%= render @question.expert_answers %>
+<% if(@question.expert_answers.empty?) %>
+  This question hasn't been answered yet! Check back soon as one of our experts will be getting to it real soon.
+<% else  %>
+    <%= render @question.expert_answers  %>
+<% end %>

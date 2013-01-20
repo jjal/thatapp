@@ -1,14 +1,21 @@
 class QuestionsController < ApplicationController
+  autocomplete nil, :content
+  before_filter :load_questions, only: [:show, :new, :index]
   
 	def index
-		@questions = Question.paginate(page: params[:page])
     @most_popular = Question.most_popular
-    render 'index'
+    respond_to do |format|
+      format.html 
+      format.json  { render json: @questions.map {|q| {:label => q.content, :value => q.id}}}
+    end
 	end
 	
 	def show
 		@question = Question.find(params[:id])
-    render 'show'
+    respond_to do |format|
+      format.html 
+      format.json  { render json: @questions.map {|q| {:label => q.content, :value => q.id}}}
+    end
 	end
 	
 	def edit
@@ -17,13 +24,15 @@ class QuestionsController < ApplicationController
   end
 	
 	def new
-		@question = Question.new
+    respond_to do |format|
+      format.html 
+      format.json  { render json: @questions.map {|q| {:label => q.content, :value => q.id}}}
+    end
   end
 	
 	def create
     @question = Question.new(params[:question])
     if @question.save
-			sign_in @question
       flash[:success] = "Question created"
       redirect_to @question
     else
@@ -49,5 +58,13 @@ class QuestionsController < ApplicationController
     redirect_to questions_url
   end
 	
-		
+  private 
+    def load_questions
+      @new_question = Question.new
+      if(!params[:term].nil?)
+        @questions = Question.find(:all, conditions: ["content LIKE ?", "%#{params[:term]}%"])
+      else
+        @questions = Question.all
+      end
+		end
 end

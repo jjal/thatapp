@@ -1,1 +1,3 @@
-<%= collection_select "question", "id", Question.all, :id, :content, {}, class: "question" %>
+<%= form_for @new_question, html: { class: "form-inline"} do |f| %>
+  <%= f.autocomplete_field :content, questions_path, :size => 75, class: "span11" %><%= f.submit "ask!", class: "btn btn-default" %>
+<% end %>

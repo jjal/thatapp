@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("select.question").change(function() {
-    window.location = "/questions/"+$(this).val();
+  $("input#question_content").bind('railsAutocomplete.select', function(event, data) {
+    window.location = "/questions/"+data.item.value;
   });
 });
