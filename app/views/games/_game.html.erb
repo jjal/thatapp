@@ -1,4 +1,6 @@
+<%= link_to game_path(game) do %>
 <ul class="thumbnails">
+  
   <li class="span3">
     <div class="<%=class_for(game, game.user_a_id)%>">
       <%= avatar_for(game.user_a_avatar) %>
@@ -14,4 +16,6 @@
       <p><%= game.user_b.name %></p>
     </div>
   </li>
+  
 </ul>
+<% end %>

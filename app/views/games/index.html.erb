@@ -1,8 +1,6 @@
 <ul>
 <%= render @games %>
 <div style="margin: 0px auto; width:300px">
-  <%= link_to games_path, method: :post do %>
-    <%= image_tag "/assets/thatapp_start.png", width: "300px" %>
-  <% end %>
+  <%= link_to "", new_game_path, class: "btn-startplaying" %>
 </div>
 </ul>

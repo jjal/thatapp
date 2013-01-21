@@ -9,6 +9,12 @@ Thatapp::Application.routes.draw do
   resources :questions do
     resources :answers
   end
+  resources :game_questions do
+    resources :answers do
+      get "success"
+      get "fail"
+    end
+  end
   resources :subscribers,   only: [:new, :create]
   
   root to: 'subscribers#new'

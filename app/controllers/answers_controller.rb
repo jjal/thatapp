@@ -1,8 +1,9 @@
 class AnswersController < ApplicationController
   
 	def index
-		@answers = Answer.paginate(page: params[:page])
     @game = Game.find(params[:game_id])
+		@answers = @game.current_question.answers.all
+    
     render 'index', layout: false
 	end
 	
@@ -18,6 +19,20 @@ class AnswersController < ApplicationController
 	
 	def new
 		@answer = Answer.new
+  end
+  
+  def success
+    @game = Game.find(params[:game_id])
+    @question = Question.find(params[:game_question_id])
+    @answer = Answer.find(params[:answer_id])
+    render "success", layout: false
+  end
+  
+  def fail
+    @game = Game.find(params[:game_id])
+    @question = Question.find(params[:game_question_id])
+    @answer = Answer.find(params[:answer_id])
+    render "fail", layout: false
   end
 	
 	def create

@@ -1,3 +1,5 @@
-<ul>
-<%= render @answers, game: @game %>
+<ul class="answer">
+<% @answers.each do |answer| %>
+  <%= render "game_answer", answer: answer, game: @game %>
+<% end %>
 </ul>

@@ -26,7 +26,7 @@ function Game(gameId, userId) {
           this.showWaitForQuestionMessage();
         }
       break;
-      case 1:
+      case 1: //question given - show wait and answers
         // i'm the questionner and it's closed so show the wait for answer message
         if(gameData.current_user_id == this.getCurrentUserId())
         {
@@ -35,11 +35,13 @@ function Game(gameId, userId) {
           this.showAnswers();
         }
       break;
-      case 3:
+      case 3: //correct answer
+        this.currentAnswerId = gameData.answer_id;
         this.showSuccess();
         this.showNextButton(gameData.current_user_id);
       break;
-      case 4:
+      case 4: //incorrect answer
+        this.currentAnswerId = gameData.answer_id;
         this.showFail(game.answer_id);
         this.showNextButton(gameData.current_user_id);
       break;
@@ -71,7 +73,7 @@ function Game(gameId, userId) {
     if(!id)
       return;
     if(id != this.currentQuestionId)
-      $.get("/questions/"+id, function(html) {
+      $.get("/game_questions/"+id, function(html) {
         $("#question_space").html(html);
       });
     this.currentQuestionId = id;
@@ -82,8 +84,8 @@ function Game(gameId, userId) {
     $("#next_question").hide();
     if(this.currentWindow == "questions")
       return;
-    
-    $.get("/questions?game_id="+this.getGameId(), function (html) {
+    $("#question_space").html("");
+    $.get("/game_questions?game_id="+this.getGameId(), function (html) {
       $("#action_space").html(html);
     });
     $("#status_space").html("Choose a question!");
@@ -94,7 +96,7 @@ function Game(gameId, userId) {
   {
     if(this.currentWindow == "answers")
       return;
-    $.get("/questions/"+this.currentQuestionId+"/answers?game_id="+this.getGameId(), function (html) {
+    $.get("/game_questions/"+this.currentQuestionId+"/answers?game_id="+this.getGameId(), function (html) {
       $("#action_space").html(html);
     });
     $("#status_space").html("Choose an answer!");
@@ -121,17 +123,30 @@ function Game(gameId, userId) {
 
   this.showSuccess = function()
   {
-    this.currentWindow = "Success";
-    $("#status_space").html("<div class='alert alert-success'>WINNER</div>");
-    $("#action_space").html("");
+    if(this.currentWindow != "Success")
+    {
+      this.currentWindow = "Success";
+       $.get("/game_questions/"+this.currentQuestionId+"/answers/"+this.currentAnswerId+"/success?game_id="+this.getGameId(), function (html) {
+        $("#status_space").html(html);
+      });
+      
+      $("#action_space").html("");
+      
+    }
   }
   this.showFail = function(id)
   {
-    this.currentWindow = "Fail";
-    $("#status_space").html("<div class='alert alert-error'>FAIL</div>");
-    //$.get("/questions/"+currentQuestionId+"/answers/"+id+"?game_id="+getGameId(), function(html)
-    //{  
-      $("#action_space").html("");
-    //});
+    if(this.currentWindow != "Fail")
+    {
+      this.currentWindow = "Fail";
+      $.get("/game_questions/"+this.currentQuestionId+"/answers/"+this.currentAnswerId+"/fail?game_id="+this.getGameId(), function (html) {
+        $("#status_space").html(html);
+      });
+     
+      //$.get("/questions/"+currentQuestionId+"/answers/"+id+"?game_id="+getGameId(), function(html)
+      //{  
+        $("#action_space").html("");
+      //});
+    }
   }
 }

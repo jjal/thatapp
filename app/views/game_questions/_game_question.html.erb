@@ -1,1 +1,1 @@
-<li><%= link_to question.content, game_path( {id: game.id, state: 1, current_question_id: question.id}), method: :put, remote: true %></li>
+<li><%= link_to "Q: #{question.content}", game_path( {id: game.id, state: 1, current_question_id: question.id}), method: :put, remote: true %></li>

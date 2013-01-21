@@ -74,6 +74,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     game_state = params[:state].to_i
     q_id = params[:current_question_id].to_i
+    #this is the response state
     if(game_state == 2)
       answer = Answer.find(params[:answer_id])
       q_id = answer.question_id
