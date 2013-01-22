@@ -1,5 +1,14 @@
-<div class="answer_response" onclick="$(this).hide()">
-  <div class="fail">
-    Fail!
+<div class="answer_response">
+  <div class="fail span6">
+    <p>No!</p>
+    <p><%= @answer.content %></p>
   </div>
+  <div class="answer_explanation span6">
+    <%= @answer.explanation %>
+    
+    <div class="doctor_dude">
+    </div>
+  </div>
+</div>
+<div class="answer_response overlay" onclick="$(.answer_response).hide()">  
 </div>

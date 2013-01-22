@@ -12,10 +12,10 @@
 
 class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	attr_accessible(:email, :name, :password, :password_confirmation) 
+	attr_accessible(:email, :name, :password, :password_confirmation, :expert)
 	
 	has_secure_password
-	has_many(:microposts, dependent: :destroy)
+	has_many :microposts, dependent: :destroy
   has_many :games_created, foreign_key: :user_a_id, class_name: 'Game'
   has_many :games_joined, foreign_key: :user_b_id, class_name: 'Game'
 	
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 	
 	def random_other_user
     rand_user = nil
-    while(rand_user.nil? or rand_user == self) do    
+    while(rand_user.nil? or rand_user == self or rand_user.admin? or rand_user.expert?) do    
       offset = rand(User.count)
       rand_user = User.first(:offset => offset)
     end
